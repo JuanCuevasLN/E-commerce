@@ -1,0 +1,198 @@
+/*
+Theme Name: PopularFX Child
+Theme URI: https://villalonengineering.com
+Description: Tema hijo personalizado de PopularFX.
+Author: Villalon Engineering
+Author URI: https://villalonengineering.com
+Template: popularfx
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: popularfx-child
+*/
+
+:root {
+  --color-white: #ffffff;
+  --color-purple-500: #a855f7;
+  --color-purple-400: #c084fc;
+  --color-blue-500: #3b82f6;
+  --color-gray-400: #9ca3af;
+  --color-slate-900: #0f172a;
+  --color-purple-900: #581c87;
+
+  /* Colores Quantum (Originales) */
+  --quantum-primary: #8b5cf6;
+  --quantum-secondary: #3b82f6;
+}
+
+li {
+  color: #fff !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: var(--color-white);
+}
+
+p {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Estilos de Layout y Navegación --- */
+
+.site-header {
+  /* fixed top-0 w-full z-50 quantum-card quantum-border */
+  width: 100%;
+  z-index: 50;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed !important;
+  background: linear-gradient(90deg,rgba(42, 38, 73, 1) 0%, rgba(76, 30, 106, 1) 50%, rgba(94, 33, 144, 1) 100%) !important;
+}
+
+.logo-group {
+  /* flex items-center space-x-2 */
+  display: flex;
+  align-items: center;
+}
+
+.site-title a {
+  font-size: 22px;
+  font-weight: 800 !important;
+  background: linear-gradient(90deg, #667eea 0%, #4B78A2 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;  
+}
+
+.nav-container {
+  width: 70%; /* max-w-7xl */
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Menú principal (Desktop only) */
+.main-menu {
+  /* hidden lg:flex items-center space-x-8 */
+  display: none;
+  align-items: center;
+}
+.main-menu > * + * {
+  margin-left: 2rem; /* space-x-8 */
+}
+.main-menu a:hover {
+  color: var(--color-purple-400); /* hover:text-purple-400 */
+  transition: color 0.15s ease-in-out; /* transition-colors */
+}
+
+/* Grupo de utilidades (Search, Cart, Avatar) */
+.utility-group {
+  /* flex items-center space-x-4 */
+  display: flex;
+  align-items: center;
+}
+.utility-group > * + * {
+  margin-left: 1rem; /* space-x-4 */
+}
+
+.search-container {
+  /* relative */
+  position: relative;
+}
+.search-input {
+  /* bg-white/10 border border-purple-500/30 rounded-full px-4 py-2 pl-10 w-64 */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 9999px; /* rounded-full */
+  padding: 0.5rem 1rem 0.5rem 2.5rem; /* py-2 px-4 pl-10 */
+  width: 16rem; /* w-64 */
+  color: var(--color-white);
+  /* Resetear estilos por defecto del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.search-input::placeholder {
+  color: var(--color-gray-400);
+}
+.search-input:focus {
+  /* focus:outline-none focus:border-purple-400 */
+  outline: none;
+  border-color: var(--color-purple-400);
+}
+
+.search-icon {
+  /* fas fa-search absolute left-3 top-3 text-gray-400 */
+  position: absolute;
+  left: 0.75rem; /* left-3 */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-400);
+}
+
+.cart-button {
+  /* relative p-2 hover:text-purple-400 transition-colors */
+  position: relative;
+  padding: 0.5rem; /* p-2 */
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+.cart-button:hover {
+  color: var(--color-purple-400); /* hover:text-purple-400 */
+  transition: color 0.15s ease-in-out; /* transition-colors */
+}
+
+.cart-count {
+  /* absolute -top-1 -right-1 bg-purple-500 text-xs rounded-full w-5 h-5 flex items-center justify-center */
+  position: absolute;
+  top: -0.25rem; /* -top-1 */
+  right: -0.25rem; /* -right-1 */
+  background-color: var(--color-purple-500);
+  font-size: 0.75rem; /* text-xs */
+  border-radius: 9999px; /* rounded-full */
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.avatar-img {
+  /* w-8 h-8 rounded-full object-cover */
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  border-radius: 9999px; /* rounded-full */
+  object-fit: cover;
+}
+
+/* Media Query para responsividad (Breakpoint 'lg' - 1024px) */
+@media (min-width: 1024px) {
+  .main-menu {
+    display: flex; /* lg:flex */
+  }
+}
+
+/* Ajustes para dispositivos móviles - ocultar la búsqueda y mantener el avatar/carrito */
+@media (max-width: 1023px) {
+  .search-container {
+    display: none;
+  }
+}

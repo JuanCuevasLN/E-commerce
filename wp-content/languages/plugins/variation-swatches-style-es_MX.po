@@ -1,0 +1,159 @@
+# Translation of Plugins - Smart Variation Swatches and Attribute Filters for WooCommerce - Stable (latest release) in Spanish (Mexico)
+# This file is distributed under the same license as the Plugins - Smart Variation Swatches and Attribute Filters for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-07-25 06:36:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: es_MX\n"
+"Project-Id-Version: Plugins - Smart Variation Swatches and Attribute Filters for WooCommerce - Stable (latest release)\n"
+
+#: inc/class-wc-ex-product-data-tab.php:260
+msgid "Add a at least one attribute / variation combination to this product that has been configured with color swatches or photos. After you add the attributes from the \"Attributes\" tab and create a variation, save the product and you will see the option to configure the swatch or photo picker here."
+msgstr "Agrega a este producto al menos una combinación de atributo / variación previamente configurada con muestas de color o fotografías. Después de añadir los atributos desde la pestaña de \"Atributos\" y crear una variación, guarda los cambios y verás aquí la opción para configurar la muestra de color o selector de color."
+
+#: inc/class-wc-ex-product-data-tab.php:151
+msgid "Custom Images"
+msgstr "Imágenes Personalizadas"
+
+#: inc/class-wc-ex-product-data-tab.php:150
+msgid "Custom Colors"
+msgstr "Colores Personalizados"
+
+#: inc/class-wc-ex-product-data-tab.php:146
+msgid "None"
+msgstr "Ninguno"
+
+#: inc/class-wc-ex-product-data-tab.php:83
+msgid "Attribute Control Type"
+msgstr "Tipo de control de atributo"
+
+#: inc/class-wc-ex-product-data-tab.php:80
+msgid "Product Attribute Name"
+msgstr "Nombre del Atributo del Producto"
+
+#: inc/class-wc-ex-product-data-tab.php:38
+msgid "Variation Swatches"
+msgstr "Muestras de Variación"
+
+#: inc/class.settings-api.php:378
+msgid "Choose File"
+msgstr "Elige un Archivo"
+
+#: inc/class-admin.php:257
+msgid "Add new"
+msgstr "Añadir nuevo"
+
+#: inc/class-admin.php:256
+msgid "Select none"
+msgstr "Elegir ninguno"
+
+#: inc/class-admin.php:255
+msgid "Select all"
+msgstr "Elegir todos"
+
+#: inc/class-admin.php:244
+msgid "Select terms"
+msgstr "Elige términos"
+
+#: inc/class-admin.php:190 inc/class-wc-ex-product-data-tab.php:216
+msgid "Remove image"
+msgstr "Quitar Imagen"
+
+#: inc/class-admin.php:189 inc/class-wc-ex-product-data-tab.php:215
+msgid "Upload/Add image"
+msgstr "Cargar/Añadir Imagen"
+
+#: inc/class-admin.php:189
+msgid "Add image to Attribute "
+msgstr "Añadir Imagen al Atributo"
+
+#: inc/class-admin.php:120
+msgid "Use image"
+msgstr "Usar Imagen"
+
+#: inc/class-admin.php:119
+msgid "Choose an image"
+msgstr "Elegir una imagen"
+
+#: inc/class-options.php:318 inc/class-options.php:368
+#: inc/class-options.php:419
+msgid "No"
+msgstr "No"
+
+#: inc/class-options.php:317 inc/class-options.php:367
+#: inc/class-options.php:418
+msgid "Yes"
+msgstr "Sí"
+
+#: inc/class-options.php:330 inc/class-options.php:380
+#: inc/class-options.php:432
+msgid "Zoom Down"
+msgstr "Alejar"
+
+#: inc/class-options.php:329 inc/class-options.php:379
+#: inc/class-options.php:431
+msgid "Zoom Up"
+msgstr "Acercar"
+
+#: inc/class-options.php:328 inc/class-options.php:378
+#: inc/class-options.php:430
+msgid "Opacity"
+msgstr "Opacidad"
+
+#: inc/class-options.php:327 inc/class-options.php:377
+#: inc/class-options.php:429
+msgid "Tick sign"
+msgstr "Símbolo para marca de aprobación"
+
+#: inc/class-options.php:255
+msgid "PX"
+msgstr "PX"
+
+#: inc/class-wc-ex-product-data-tab.php:152
+msgid "Custom Lebel"
+msgstr "Etiqueta personalizada"
+
+#: inc/class-options.php:180 inc/class-options.php:232
+#: inc/class-options.php:343 inc/class-options.php:394
+msgid "Round corner"
+msgstr "Esquinas redondeadas"
+
+#: inc/class-options.php:179 inc/class-options.php:231
+#: inc/class-options.php:342 inc/class-options.php:393
+msgid "Circle"
+msgstr "Círculo"
+
+#: inc/class-options.php:178 inc/class-options.php:230
+#: inc/class-options.php:341 inc/class-options.php:392
+msgid "Square"
+msgstr "Cuadrado"
+
+#. Author of the plugin
+#: smart-variation-swatches-for-woocommerce.php
+msgid "aThemeArt"
+msgstr "aThemeArt"
+
+#: smart-variation-swatches-for-woocommerce.php:58
+msgid "Image"
+msgstr "Imagen"
+
+#: smart-variation-swatches-for-woocommerce.php:59
+msgid "Color"
+msgstr "Color"
+
+#: inc/class-wc-ex-product-data-tab.php:148
+msgid "Taxonomy Lebel, Colors and Images"
+msgstr "Etiquetas de taxonomía, colores e imágenes."
+
+#: smart-variation-swatches-for-woocommerce.php:60
+msgid "Label"
+msgstr "Etiqueta"
+
+#. Description of the plugin
+#: smart-variation-swatches-for-woocommerce.php
+msgid "An extension of WooCommerce that make variable products be more beauty and friendly with customers."
+msgstr "Una extensión de WooCommerce que hace los productos variables mas hermosos y amigables con los clientes."

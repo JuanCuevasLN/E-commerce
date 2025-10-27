@@ -1,0 +1,57 @@
+2025-10-23T17:51:48+00:00 DEBUG #2114 - [New Request] POST /e-commerce/index.php/wp-json/wc-admin/settings/payments/suggestion/paypal_full_stack/attach
+2025-10-23T17:51:48+00:00 DEBUG #2114 - Webhook lock acquired for 'register'.
+2025-10-23T17:51:48+00:00 DEBUG #2114 - Webhook operation 'register' started.
+2025-10-23T17:51:48+00:00 DEBUG #2114 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2025-10-23T17:51:48+00:00 ERROR #2114 - Failed to delete webhooks: [Error] Not Found
+2025-10-23T17:51:48+00:00 INFO #2114 - Webhooks deleted.
+2025-10-23T17:51:49+00:00 DEBUG #2114 - POST https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Request Body: {"url":"https:\/\/localhost\/e-commerce\/index.php\/wp-json\/paypal\/v1\/incoming","event_types":[{"name":"CHECKOUT.ORDER.APPROVED"},{"name":"CHECKOUT.ORDER.COMPLETED"},{"name":"CHECKOUT.PAYMENT-APPROVAL.REVERSED"},{"name":"PAYMENT.CAPTURE.REFUNDED"},{"name":"PAYMENT.AUTHORIZATION.VOIDED"},{"name":"PAYMENT.CAPTURE.REVERSED"},{"name":"PAYMENT.ORDER.CANCELLED"},{"name":"PAYMENT.CAPTURE.DENIED"},{"name":"PAYMENT.CAPTURE.COMPLETED"},{"name":"VAULT.PAYMENT-TOKEN.CREATED"},{"name":"VAULT.PAYMENT-TOKEN.DELETED"},{"name":"PAYMENT.CAPTURE.PENDING"},{"name":"PAYMENT.SALE.COMPLETED"},{"name":"PAYMENT.SALE.REFUNDED"},{"name":"BILLING.SUBSCRIPTION.CANCELLED"},{"name":"BILLING.PLAN.PRICING-CHANGE.ACTIVATED"},{"name":"CATALOG.PRODUCT.UPDATED"},{"name":"BILLING.PLAN.UPDATED"}]}
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2025-10-23T17:51:49+00:00 ERROR #2114 - Failed to subscribe webhooks: [Error] Not Found
+2025-10-23T17:51:49+00:00 DEBUG #2114 - Webhook lock released for 'register'.
+2025-10-23T17:52:31+00:00 DEBUG #2667 - [New Request] GET /e-commerce/wp-admin/admin.php
+2025-10-23T17:52:31+00:00 DEBUG #2667 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2025-10-23T17:52:31+00:00 WARNING #2667 - [Error] Not Found CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"headers":{},"body":"{"statusCode":404,"error":"Not Found","message":"Not Found"}","response":{"code":404,"message":"Not Found"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}}
+2025-10-23T17:52:36+00:00 DEBUG #8001 - [New Request] GET /e-commerce/index.php/wp-json/wc/v3/wc_paypal/webhooks
+2025-10-23T17:52:36+00:00 DEBUG #8001 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2025-10-23T17:59:06+00:00 DEBUG #1130 - [New Request] POST /e-commerce/index.php/wp-json/wp/v2/plugins/woocommerce-paypal-payments/woocommerce-paypal-payments
+2025-10-23T17:59:06+00:00 DEBUG #1130 - Webhook lock acquired for 'unregister'.
+2025-10-23T17:59:06+00:00 DEBUG #1130 - Webhook operation 'unregister' started.
+2025-10-23T17:59:07+00:00 DEBUG #1130 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2025-10-23T17:59:07+00:00 ERROR #1130 - Failed to delete webhooks: [Error] Not Found
+2025-10-23T17:59:07+00:00 INFO #1130 - Webhooks deleted.
+2025-10-23T17:59:07+00:00 DEBUG #1130 - Webhook lock released for 'unregister'.
