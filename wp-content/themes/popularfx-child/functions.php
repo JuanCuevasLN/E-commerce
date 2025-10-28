@@ -17,7 +17,10 @@
     // Cargar Funciones
     require get_stylesheet_directory() . '/inc/menu.php';
 
-   
+    function agregar_font_awesome() {
+        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');  
+    }
+    add_action('wp_enqueue_scripts', 'agregar_font_awesome');
     /**
      * Cargar estilos del tema padre y del hijo
      */
@@ -36,6 +39,4 @@
         );
     }
     add_action('wp_enqueue_scripts', 'popularfx_child_enqueue_styles');
-
-
 ?>
