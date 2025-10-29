@@ -29,7 +29,6 @@
 
         <header id="masthead" class="site-header header quantum-card quantum-border">
             <div class="container-nav">
-                <div class="logo-group">
                     <?php
                     the_custom_logo();
                     if (is_front_page() && is_home()) :
@@ -48,29 +47,38 @@
                                                     ?></p>
                     <?php endif;
                     ?>
-                </div>
+                
                 <nav class="nav-container main-navigation hidden-mobile" id="site-navigation">
                     <!-- Menu principal -->
                     <div class="main-menu">
                         <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location' => 'menu_principal',
-                                'container'      => false,
-                                'menu_class'     => 'first-content-menu',
-                            )
-                        );
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'menu_principal',
+                                    'container'      => false,
+                                    'menu_class'     => 'first-content-menu',
+                                )
+                            );
                         ?>
                     </div>
-    
+
                     <!-- Menu secundario -->
                     <div class="utility-group">
                         <!-- Busqueda -->
+
                         <div class="search-container">
-                            <i class="fas fa-search search-icon"></i>
-                            <input type="text" placeholder="Search products..." class="search-input">
+                            <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url(home_url('/')); ?>">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="search"
+                                    id="woocommerce-product-search-field"
+                                    class="search-input search-field"
+                                    placeholder="<?php echo esc_attr__('Search products...', 'woocommerce'); ?>"
+                                    value="<?php echo get_search_query(); ?>"
+                                    name="s" />
+                                <input type="hidden" name="post_type" value="product" />
+                            </form>
                         </div>
-    
+
                         <div class="menu-derecho">
                             <?php
                             wp_nav_menu(
