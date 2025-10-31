@@ -42,4 +42,3 @@
         );
     }
     add_action('wp_enqueue_scripts', 'popularfx_child_enqueue_styles');
-?>

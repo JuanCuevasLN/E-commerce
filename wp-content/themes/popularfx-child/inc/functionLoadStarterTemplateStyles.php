@@ -12,8 +12,8 @@
 
             wp_enqueue_script(
                 'quantum-home-js',
-                get_stylesheet_directory_uri() . '/assets/js/home.js',
-                array('jquery'),
+                get_stylesheet_directory_uri() . '/assets/js/animations/carousel.js',
+                array(),
                 '1.0.0',
                 true
             );
