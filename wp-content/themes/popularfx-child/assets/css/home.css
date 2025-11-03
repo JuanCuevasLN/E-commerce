@@ -74,64 +74,105 @@
     display: inline-block;
     color: #fff !important;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
-    outline: 1px solid #09B7BE;
-    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    position: relative;
+    border: 1px solid #fff;
+    animation: pulse 1.5s infinite;
+    isolation: isolate;
+}
+
+.btn-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
 }
 
 .btn-gradient:hover {
-    transform: translateY(-2px);
-    outline: 2px solid #09B7BE;
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    color: #fff;
 }
 
-.btn-gradient:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(59, 130, 246, 0.4);
+.btn-gradient:hover::before {
+    transform: translateX(0);
+}
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 191, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 191, 255, 0);
+    }
 }
 
 .welcome-image {
-    height: 90%;
-    display: flex;
-    align-items: center;
-    border-radius: 15px;
-    background: #47347D;
-    justify-content: center;
-    border: 1px solid #5A498B;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background: #47347D;
+  justify-content: center;
+  border: 1px solid #5A498B;
+  position: relative;
+  overflow: hidden;
 }
 
 .welcome-image img {
-    width: 85%;
-    height: 85%;
-    display: block;
-    border-radius: 15px;
-    animation: vibrar 1.2s infinite ease-in-out;
+  width: 85%;
+  height: 85%;
+  display: block;
+  border-radius: 15px;
+  animation: vibrar .3s infinite ease-in-out;
 }
 
-@keyframes vibrar {
-  0%, 100% {
-    transform: translate(0, 0);
+.welcome-image::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00bfff, transparent);
+  box-shadow: 0 0 8px #00bfff;
+  animation: scan-line 4s ease-in-out infinite;
+}
+
+@keyframes scan-line {
+  0% {
+    top: -5%;
+    opacity: 0;
   }
-  20% {
-    transform: translate(1px, -1px);
+  10% {
+    opacity: 1;
   }
-  40% {
-    transform: translate(-1px, 1px);
+  90% {
+    top: 100%;
+    opacity: 1;
   }
-  60% {
-    transform: translate(1px, 1px);
-  }
-  80% {
-    transform: translate(-1px, -1px);
+  100% {
+    top: 105%;
+    opacity: 0;
   }
 }
+
 
 .quantum-categories {
     width: 100%;
-    height: 530px;
+    height: 510px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,9 +182,9 @@
 
 .categories-header {
     width: 100%;
-    height: 50px;
+    height: 80px;
     display: flex;
-    align-items: center;
+    align-items:start;
     justify-content: center;
 }
 
@@ -156,20 +197,21 @@
 .carousel-wrapper {
     width: 90%;
     z-index: 10;
-    height: 480px;
+    height: auto;
     max-width: 1100px;
     position: relative;
     perspective: 2000px;
 }
 
 .carousel-track {
+    height: auto;
     display: flex;
-    height: 430px;
     transition: transform 0.75s cubic-bezier(0.21, 0.61, 0.35, 1);
     transform-style: preserve-3d;
 }
 
 .carousel-card {
+    height: auto;
     min-width: 300px;
     max-width: 320px;
     margin: 0 25px;
@@ -181,7 +223,7 @@
 	border-radius: 1.2rem;
 	overflow: hidden;
     backdrop-filter: blur(10px);
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.2);
+	
 	transition: all 0.6s cubic-bezier(0.21, 0.61, 0.35, 1);
 	transform-origin: center center;
 	position: relative;
@@ -192,14 +234,6 @@
 	content: "";
 	position: absolute;
 	inset: -2px;
-	background: linear-gradient(
-		45deg,
-		transparent 0%,
-		var(--neon-blue) 25%,
-		var(--neon-green) 50%,
-		var(--neon-pink) 75%,
-		transparent 100%
-	);
 	z-index: -1;
 	border-radius: 1.3rem;
 	filter: blur(8px);
@@ -208,7 +242,7 @@
 	animation: borderGlow 6s linear infinite;
 }
 
-@keyframes borderGlow {
+/* @keyframes borderGlow {
 	0% {
 		background-position: 0% 50%;
 		opacity: 0.3;
@@ -221,7 +255,7 @@
 		background-position: 0% 50%;
 		opacity: 0.3;
 	}
-}
+} */
 
 .carousel-card.is-active::before {
     opacity: 1;
@@ -248,15 +282,18 @@
 	transform: scale(1) rotateY(0) translateZ(0);
 	opacity: 1;
 	z-index: 20;
-	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-primary),
-		inset 0 0 20px rgba(56, 189, 248, 0.1);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-primary),
+		inset 0 0 20px rgba(248, 56, 56, 0.1);
 	filter: saturate(1.2) brightness(1.1);
 }
 
 .card-image-container {
-    position: relative;
     height: 200px;
+    display: flex;
     overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
     border-bottom: 1px solid rgba(94, 234, 212, 0.3);
 }
 
@@ -283,7 +320,7 @@
 	pointer-events: none;
 }
 
-.card-image-container::before {
+/* .card-image-container::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -300,19 +337,23 @@
 	pointer-events: none;
 	opacity: 0.5;
 	z-index: 5;
-}
+} */
 
 .card-content {
-	padding: 1.75rem;
+    gap: 15px;
+	padding: 12px;
+    display: flex;
 	color: #f1f5f9;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card-title {
-	font-family: "Orbitron", sans-serif;
-	margin-bottom: 0.75rem;
-	letter-spacing: 1px;
+    margin: 0;
 	position: relative;
+	letter-spacing: 1px;
 	display: inline-block;
+	font-family: "Orbitron", sans-serif;
 }
 
 .card-title::after {
@@ -332,10 +373,19 @@
 }
 
 .card-description {
-	font-size: 0.9rem;
+    margin: 0;
+    font-weight: 300;
 	line-height: 1.6;
+	font-size: 0.9rem;
 	color: rgba(241, 245, 249, 0.8);
-	font-weight: 300;
+}
+
+.card-price {
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: rgba(241, 245, 249, 0.8)
 }
 
 .carousel-button {
@@ -430,6 +480,33 @@
 	background: #38bdf8;
 	box-shadow: 0 0 10px #38bdf8;
 }
+
+
+/* Tercera seccion  */
+
+.shopping-experience {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(90deg,rgba(76, 27, 120, 1) 0%, rgba(69, 26, 112, 1) 50%, rgba(32, 24, 64, 1) 100%);
+}
+
+
+.experience-header {
+
+}
+
+.experience-content {
+
+}
+
+
+
+
+
+
+
+
+
 
 /* Cuando la pantalla sea pequeña (por ejemplo, menor a 768px) */
 @media (max-width: 1068px) {

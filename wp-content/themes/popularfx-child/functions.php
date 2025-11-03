@@ -22,7 +22,11 @@
     add_action('wp_enqueue_scripts', 'agregar_font_awesome');
 
     require_once get_stylesheet_directory() . '/inc/replace-text-with-icons.php';
-    require_once get_stylesheet_directory() . '/inc/functionLoadStarterTemplateStyles.php';
+
+    $enqueue_dir = get_stylesheet_directory() . '/inc/enqueue/';
+    foreach ( glob( $enqueue_dir . '*.php') as $file) {
+        require_once $file;
+    }
 
     /**
      * Cargar estilos del tema padre y del hijo

@@ -62,8 +62,8 @@ get_header(); ?>
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title"><?php echo esc_html($category->name); ?></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorem facere eaque repellendus autem</p>
-                                    <p class="card-description"><?php echo $count; ?> <?php echo $count === 1 ? 'producto' : 'productos'; ?></p>
+                                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorem facere eaque repellendus autem</p>
+                                    <p class="card-price"><?php echo $count; ?> <?php echo $count === 1 ? 'producto' : 'productos'; ?></p>
                                 </div>
                             </div>
                     <?php    
@@ -100,6 +100,23 @@ get_header(); ?>
                         }
                     }
                 ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="shopping-experience">
+        <div class="experience-header">
+            <h2>¿Por que utilizarnos?</h2>
+        </div>
+        <div class="experience-content">
+            <div class="content-one">
+
+            </div>
+            <div class="content-two">
+
+            </div>
+            <div class="content-trhee">
+
             </div>
         </div>
     </section>

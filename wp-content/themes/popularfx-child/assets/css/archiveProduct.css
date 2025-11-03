@@ -1,0 +1,110 @@
+.body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(90deg, rgba(22, 24, 51, 1) 0%, rgba(57, 26, 96, 1) 50%, rgba(81, 26, 125, 1) 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+ .categories-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+}
+
+.categories-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+}
+
+.categories-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    justify-content: center; /* centra todo el conjunto */
+    justify-items: center; /* centra cada item en su celda */
+}
+
+ .category-item {
+     width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.category-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.main-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 1.5rem;
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.content-main {
+    flex: 1;
+}
+
+.sorting-bar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sorting-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sorting-right {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+
