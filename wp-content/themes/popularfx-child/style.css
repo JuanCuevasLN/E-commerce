@@ -214,14 +214,14 @@ a {
 
 .first-content-menu .menu-item a {
   font-weight: 500;
-  color: #e7e5e5cc;
+  color: #e7e5e5cc !important;
   font-size: 14px;
 }
 
 .second-content-menu .menu-item a {
   font-weight: 500;
   font-size: 15px;
-  color: #e7e5e5cc;
+  color: #e7e5e5cc !important;
 }
 
 .cart-button {
