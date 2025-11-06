@@ -26,11 +26,13 @@
                                 $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : wc_placeholder_img_src();
                                 $cat_link = get_term_link($category);
                                 $count = $category->count;
-                ?>
-                                <div class="category-item">
-                                    <h3> <?php echo esc_html($category->name); ?> </h3>
-                                    <p> <?php echo $count; ?> <?php echo $count === 1 ? 'producto' : 'productos'; ?> </p>
-                                </div>
+                ?>                 
+                                <a href="<?php echo $cat_link; ?>" class="category-item">
+                                    <div class="category-item">
+                                        <h3> <?php echo esc_html($category->name); ?> </h3>
+                                        <p> <?php echo $count; ?> <?php echo $count === 1 ? 'producto' : 'productos'; ?> </p>
+                                    </div>
+                                </a>
                 <?php
                             }
                         }
@@ -47,7 +49,7 @@
 
                 <!-- Filtro por precio -->
                 <div class="filter-group">
-                    <h4 class="filter-title">Precio</h4>
+                    <h4 class="filter-subtitle">Rango de precio</h4>
                     <div class="filter-content">
                         <label for="precio_min">Mínimo:</label>
                         <input type="number" id="precio_min" name="precio_min" min="0" placeholder="0">
@@ -59,8 +61,8 @@
 
                 <!-- Filtro por valoración -->
                 <div class="filter-group">
-                    <h4 class="filter-title">Valoración</h4>
-                    <div class="filter-content">
+                    <h4 class="filter-subtitle">Valoración</h4>
+                    <div class="">
                         <label><input type="radio" name="valoracion" value="4"> ★★★★ o más</label><br>
                         <label><input type="radio" name="valoracion" value="3"> ★★★ o más</label><br>
                         <label><input type="radio" name="valoracion" value="2"> ★★ o más</label><br>
@@ -84,9 +86,9 @@
                         if (!empty($categories) && !is_wp_error($categories)) :
                             foreach ($categories as $cat) :
                                 ?>
-                                <label>
+                                <label class="checkbox-label">
                                     <input type="checkbox" name="categoria[]" value="<?php echo esc_attr($cat->term_id); ?>">
-                                    <?php echo esc_html($cat->name); ?>
+                                    <span><?php echo esc_html($cat->name); ?></span>
                                 </label><br>
                                 <?php
                             endforeach;
@@ -109,6 +111,15 @@
                 <div class="sorting-bar"> 
                     <div class="sorting-content">
                         <div class="sorting-left">
+                            <span class="sorting-label">Ordenar por:</span>
+                            <select id="ordenar" name="ordenar" class="sorting-select">
+                                <option value="" selected>...</option>
+                                <option value="date_desc">Más recientes</option>
+                                <option value="price_asc">Precio: menor a mayor</option>
+                                <option value="price_desc">Precio: mayor a menor</option>
+                                <option value="rating_desc">Mejor valorados</option>
+                                <option value="title_asc">Nombre A-Z</option>
+                             </select>
                         </div>
                         <div class="view-buttons">
                         </div>

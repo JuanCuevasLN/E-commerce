@@ -64,48 +64,69 @@
     }
     add_action('wp_enqueue_scripts', 'enqueue_filtros_ajax_script');
 
-
-
-
-
-
-    function filtrar_productos_callback()
-    {
-        $filtros = $_POST['filtros'];
+    function filtrar_productos_callback(){
+        $filtros = $_POST['filtros'] ?? [];
 
         $args = array(
             'post_type' => 'product',
             'posts_per_page' => 10,
             'post_status' => 'publish',
+            'meta_query' => [],
+            'tax_query' => [],
         );
 
         // Filtro por precio
         if (!empty($filtros['precio_min']) && !empty($filtros['precio_max'])) {
-            $args['meta_query'][] = array(
+            $args['meta_query'][] = [
                 'key' => '_price',
-                'value' => array($filtros['precio_min'], $filtros['precio_max']),
+                'value' => [floatval($filtros['precio_min']), floatval($filtros['precio_max'])],
                 'compare' => 'BETWEEN',
                 'type' => 'NUMERIC'
-            );
+            ];
         }
 
         // Filtro por categoría
         if (!empty($filtros['categorias'])) {
-            $args['tax_query'][] = array(
+            $args['tax_query'][] = [
                 'taxonomy' => 'product_cat',
                 'field' => 'term_id',
                 'terms' => $filtros['categorias'],
-            );
+            ];
         }
 
         // Filtro por valoración
         if (!empty($filtros['valoracion'])) {
-            $args['meta_query'][] = array(
+            $args['meta_query'][] = [
                 'key' => '_wc_average_rating',
                 'value' => floatval($filtros['valoracion']),
                 'compare' => '>=',
                 'type' => 'NUMERIC'
-            );
+            ];
+        }
+        switch ($filtros['ordenar'] ?? 'date_desc') {
+            case 'price_asc':
+                $args['meta_key'] = '_price';
+                $args['orderby'] = 'meta_value_num';
+                $args['order'] = 'ASC';
+                break;
+            case 'price_desc':
+                $args['meta_key'] = '_price';
+                $args['orderby'] = 'meta_value_num';
+                $args['order'] = 'DESC';
+                break;
+            case 'rating_desc':
+                $args['meta_key'] = '_wc_average_rating';
+                $args['orderby'] = 'meta_value_num';
+                $args['order'] = 'DESC';
+                break;
+            case 'title_asc':
+                $args['orderby'] = 'title';
+                $args['order'] = 'ASC';
+                break;
+            default:
+                $args['orderby'] = 'date';
+                $args['order'] = 'DESC';
+                break;
         }
 
         $query = new WP_Query($args);
@@ -128,3 +149,27 @@
     }
     add_action('wp_ajax_filtrar_productos', 'filtrar_productos_callback');
     add_action('wp_ajax_nopriv_filtrar_productos', 'filtrar_productos_callback');
+
+    function custom_move_thumbs_script() {
+        if (is_product()) {
+            wp_enqueue_script(
+                'move-thumbs',
+                get_stylesheet_directory_uri() . '/assets/js/move-thumbs.js',
+                array('jquery'),
+                '1.0.0',
+                true
+            );
+        }
+    }
+
+    add_action( 'wp_enqueue_scripts', 'custom_move_thumbs_script');
+
+
+    // Quitar funciones originales
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 60);

@@ -1,0 +1,285 @@
+.woocommerce main {
+    border: none !important;
+    margin: 0 !important;
+}
+
+.site-main {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: #020617;
+    color: #f1f5f9;
+    line-height: 1.6;
+}
+
+/* Main Container */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Product Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: auto 1fr 1.5fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Thumbnails */
+.thumbnails ol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.thumbnails ol li {
+    width: 80px;
+    height: 80px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.5);
+    border: 2px solid #64748b;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.thumbnails ol li .active {
+    border-color: #a855f7;
+}
+
+.thumbnails ol li:hover {
+    border-color: #c084fc;
+}
+
+.thumbnails ol li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main Image */
+.main-image {
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.3));
+    border: 1px solid rgba(100, 116, 139, 0.5);
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Product Info */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.category-badge {
+    font-size: 0.875rem;
+    color: #c084fc;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border-top: 1px solid rgba(100, 116, 139, 0.5);
+    padding-top: 1.5rem;
+}
+
+.price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+}
+
+/* Points Card */
+.points-card {
+    background: linear-gradient(to right, rgba(88, 28, 135, 0.3), rgba(157, 23, 77, 0.3));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.points-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.points-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.points-title i {
+    color: #facc15;
+}
+
+.points-value {
+    color: #d8b4fe;
+    font-weight: 600;
+}
+
+.points-info {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.points-btn {
+    width: 100%;
+    background: linear-gradient(to right, #9333ea, #db2777);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: all 0.3s;
+}
+
+.points-btn:hover {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+}
+
+.description {
+    color: #cbd5e1;
+    line-height: 1.75;
+}
+
+.stock-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.in-stock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4ade80;
+    font-weight: 500;
+}
+
+.stock-info span {
+    color: #64748b;
+}
+
+/* Quantity and Actions */
+.quantity-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.add-to-cart {
+    flex: 1 !important;
+    width: 350px !important;
+    background: linear-gradient(to right, #9333ea, #db2777) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    border-radius: 0.75rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3) !important;
+    border: none !important;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+}
+
+ /* Tabs Section */
+.tabs-section {
+    margin-bottom: 4rem;
+}
+
+.tabs-nav {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.5) !important;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.tab-btn {
+    background: none !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+    padding-bottom: 1rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+}
+
+.tab-btn.active {
+    border-bottom-color: #a855f7;
+    color: white;
+}
+
+.tab-btn:hover {
+    color: white;
+}
+
+.tabs-nav li a {
+    font-weight: 400 !important;
+}
+
+.tab-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.3), rgba(30, 41, 59, 0.2));        
+    border: 1px solid rgba(100, 116, 139, 0.5);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.tab-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.tab-card p {
+    color: #cbd5e1;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
