@@ -22,6 +22,7 @@
     add_action('wp_enqueue_scripts', 'agregar_font_awesome');
 
     require_once get_stylesheet_directory() . '/inc/replace-text-with-icons.php';
+    require_once get_stylesheet_directory() . '/inc/wp_custom_dropdown_menu_variation_attribute_options.php';
 
     $enqueue_dir = get_stylesheet_directory() . '/inc/enqueue/';
     foreach (glob($enqueue_dir . '*.php') as $file) {
@@ -173,3 +174,4 @@
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 60);
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 70);

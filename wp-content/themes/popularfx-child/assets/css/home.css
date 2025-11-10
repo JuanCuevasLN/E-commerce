@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, rgba(55, 26, 93, 1) 0%, rgba(57, 34, 114, 1) 50%, rgba(60, 42, 135, 1) 100%);
+    background: #020617;
 }
 
 .container-flex {
@@ -124,9 +125,9 @@
   display: flex;
   align-items: center;
   border-radius: 15px;
-  background: #47347D;
+  background: #040920ad;
   justify-content: center;
-  border: 1px solid #5A498B;
+  border: 1px solid #051149;
   position: relative;
   overflow: hidden;
 }
@@ -178,6 +179,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg,rgba(43, 24, 78, 1) 0%, rgba(74, 27, 117, 1) 50%, rgba(62, 26, 101, 1) 100%);
+    background:#020617;
 }
 
 .categories-header {

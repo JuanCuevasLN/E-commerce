@@ -35,7 +35,6 @@ if ( post_password_required() ) {
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'main', $product ); ?>>
 		<div class="product-grid">
 			<div class="thumbnails">
-
 			</div>
 
 			<div class="main-image">
@@ -107,6 +106,8 @@ if ( post_password_required() ) {
 		</div>
 
 		<?php woocommerce_output_product_data_tabs() ?>
+
+		<?php woocommerce_output_related_products() ?>
 	</div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
